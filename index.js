@@ -1,9 +1,128 @@
+import { Animal, Cat } from './animal.js';
+let cat = new Cat('Cat', 4);
+
+var commands = [];
+commands.push("animal.js:")
+commands.push("export class Animal {")
+commands.push("constructor(type, legs) {")
+commands.push("this.type = type")
+commands.push("this.legs = legs")
+commands.push("}")
+commands.push("")
+commands.push("makeNoise(sound = 'Loud noise') {")
+commands.push("console.log(meow)")
+commands.push("}")
+commands.push("get metaData() {")
+commands.push("return `Type:${this.type}, Legs:${this.legs}`;")
+commands.push("}")
+commands.push("return 10;")
+commands.push("static return10() {")
+commands.push("")
+commands.push("}")
+commands.push("}")
+commands.push("")
+commands.push("export class Cat extends Animal {")
+commands.push("//     constructor(type, legs, tail) {")
+commands.push("//     super(type, legs)")
+commands.push("//     this.tail = tail;")
+commands.push("// }")
+commands.push("")
+commands.push("makeNoise(sound = \"meow\") {")
+commands.push("console.log(sound)")
+commands.push("}")
+commands.push("}")
+
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("cat.legs = 3")
+commands.push("cat.metaData()")
+render("Classes(Extends):", cat.makeNoise(), commands)
+
+console.log(Animal.return10)
+
+var commands = [];
+commands.push("animal.js:")
+commands.push("export class Animal {")
+commands.push("constructor(type, legs) {")
+commands.push("this.type = type")
+commands.push("this.legs = legs")
+commands.push("}")
+commands.push("")
+commands.push("makeNoise(sound = 'Loud noise') {")
+commands.push("console.log(meow)")
+commands.push("}")
+commands.push("static return10() {")
+commands.push("return 10;")
+commands.push("}")
+commands.push("}")
+commands.push("")
+
+commands.push("import { Animal } from './animal.js';");
+commands.push("Animal.return10()")
+render("Classes(Static Method):", Animal.return10(), commands)
+
+cat = new Animal('Cat', 4);
+var commands = [];
+
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("cat.legs = 3")
+commands.push("cat.makeNoise(meow)")
+render("Classes(Initialized):", cat.makeNoise("meow"), commands)
+
+
+cat = new Animal('Cat', 4);
+cat.legs = 3
+
+var commands = [];
+
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("cat.legs = 3")
+commands.push("console.log(cat.legs)")
+render("Classes", JSON.stringify(cat.legs), commands)
+
+cat = new Animal('Cat', 4);
+var commands = [];
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("cat.legs = 3")
+commands.push("cat.makeNoise()")
+render("Classes(default):", cat.makeNoise(), commands)
+
+cat = new Animal('Cat', 4);
+
+var commands = [];
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("console.log(cat.type)")
+
+render("Classes", JSON.stringify(cat.type), commands)
+
+cat = new Animal('Cat', 4);
+
+var commands = [];
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("console.log(cat.legs)")
+
+render("Classes", JSON.stringify(cat.legs), commands)
+
+cat = new Animal('Cat', 4);
+
+var commands = [];
+commands.push("import { Animal } from './animal.js';");
+commands.push("let cat = new Animal('Cat', 4);")
+commands.push("console.log(cat)")
+
+render("Classes", JSON.stringify(cat), commands)
+
 let lname = 'Shendy'
 console.log(lname.padStart(10, 'a'))
 
 var commands = [];
 commands.push("let lname = 'Shendy'");
-commands.push("console.log(lname.padEnd(10, 'a'))")
+commands.push("console.log(lname.padEnd(10, 'x'))")
 render("pad start/end method (adds character based on extra length)", lname.padEnd(10, 'x'), commands)
 
 
@@ -13,8 +132,8 @@ console.log(name.padStart(10, 'a'))
 
 var commands = [];
 commands.push("let name = 'Shendy'");
-commands.push("console.log(name.padStart(10, 'a'))")
-render("pad start/end method (adds character based on extra length)", name.padStart(10, 'a'), commands)
+commands.push("console.log(name.padStart(10, 'x'))")
+render("pad start/end method (adds character based on extra length)", name.padStart(10, 'x'), commands)
 
 
 var commands = [];
