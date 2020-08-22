@@ -1,5 +1,67 @@
+const exampleSetxx = new Set([1, 1, 1, 2, 2]);
+exampleSetxx.add(5)
+console.log(exampleSetxx);
+
+var commands = [];
+commands.push("const exampleSetx = new Set([1, 1, 1, 2, 2]);")
+commands.push("console.log(exampleSetxx);")
+commands.push("exampleSetxx.delete(1)")
+render("Set - Can be forEach or ForOf (Has true/false)", exampleSetxx.has(1), commands)
+
+
+const exampleSetx = new Set([1, 1, 1, 2, 2]);
+exampleSetx.add(5)
+console.log(exampleSetx);
+
+var commands = [];
+commands.push("const exampleSetx = new Set([1, 1, 1, 2, 2]);")
+commands.push("console.log(exampleSetx);")
+commands.push("exampleSetx.delete(1)")
+render("Set (Delete true/false)", exampleSetx.delete(1), commands)
+
+const exampleSet = new Set([1, 1, 1, 2, 2]);
+exampleSet.add(5)
+console.log(exampleSet);
+
+var commands = [];
+commands.push("const exampleSet = new Set([1, 1, 1, 2, 2]);")
+commands.push("console.log(exampleSet);")
+commands.push("exampleSet.add(5)")
+render("Set (Remove duplicates)", exampleSet.size, commands)
+
+
+var commands = [];
+commands.push("const apiUrl = \"http://numbersapi.com/43/trivia\";")
+commands.push("function getAPIData() {")
+commands.push("fetch(apiUrl)")
+commands.push(".then((response) => r.json()) // convert into json")
+commands.push(".then((json) => {")
+commands.push("console.log(json[0])")
+commands.push("})")
+commands.push("}")
+
+render("Async/Await(old way)", "", commands)
+
+function addx(param1,) {
+    const example = {
+        name: 'Dylan',
+    };
+    return example;
+}
+
+var commands = [];
+commands.push("function addx(param1,) {")
+commands.push("const example = {")
+commands.push("name: 'Dylan',")
+commands.push("}'")
+commands.push("return example;")
+commands.push("}")
+render("Trailing Commas", JSON.stringify(addx()), commands)
+
 import { Animal, Cat } from './animal.js';
 let cat = new Cat('Cat', 4);
+
+cat = new Cat('Cat', 4);
 
 var commands = [];
 commands.push("animal.js:")
@@ -35,10 +97,8 @@ commands.push("}")
 commands.push("import { Animal } from './animal.js';");
 commands.push("let cat = new Animal('Cat', 4);")
 commands.push("cat.legs = 3")
-commands.push("cat.metaData()")
-render("Classes(Extends):", cat.makeNoise(), commands)
-
-console.log(Animal.return10)
+commands.push("cat.metaData")
+render("Classes(Extends Inheritance):", cat.metaData, commands)
 
 var commands = [];
 commands.push("animal.js:")
