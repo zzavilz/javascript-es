@@ -407,7 +407,7 @@ function addressMaker(city, state) {
 addressMaker('Austin', 'Texas');
 
 commands = [JSON.stringify(addressMaker), "addressMaker('Austin', 'Texas')"]
-render("OBJECT LITERALS:", `addressMaker`, commands)
+render("OBJECT LITERALS:", JSON.stringify(addressMaker), commands)
 
 
 let [firstName2, middleName2, lastName2] = ['Dylan', 'Coding God', 'Israel']
@@ -417,7 +417,6 @@ render("DESTRUCTURING ARRAY:", `${firstName2}, ${middleName2}, ${lastName2}`, co
 
 
 let [firstName1, middleName1, lastName1] = ['Dylan', 'Coding God', 'Israel']
-lastName1 = 'Clements'
 
 var commands = ["let [firstName1, middleName1, lastName1] = ['Dylan', 'Coding God', 'Israel']", "console.log(`${firstName1} ${middleName1} ${lastName1}`)"]
 render("DESTRUCTURING ARRAY:", `${firstName1}, ${middleName1}, ${lastName1}`, commands)
@@ -432,12 +431,34 @@ const personalInformation = {
 }
 
 const { firstName: fn, lastName: ln } = personalInformation
-var commands = [JSON.stringify(personalInformation), "const {firstName:fn, lastName:ln} = personalInformation", "console.log(`${fn} ${ln}`)"]
+
+var commands = [];
+commands.push("const personalInformation = {")
+commands.push("firstName: 'Shendy',")
+commands.push("lastName: 'Avila',")
+commands.push("city: 'Taguig',")
+commands.push("state: 'Metro Manila',")
+commands.push("zipCode: 1632")
+commands.push("}")
+
+commands.push("")
+commands.push("const {firstName:fn, lastName:ln} = personalInformation")
+commands.push("console.log(`${fn} ${ln}`)")
 render("DESTRUCTURING OBJECTS:", `${fn} ${ln}`, commands)
 
 
 const { firstName, lastName } = personalInformation
-var commands = [JSON.stringify(personalInformation), "const {firstName, lastName} = personalInformation", "console.log(`${firstname} ${lastName}`)"]
+var commands = [];
+commands.push("const personalInformation = {")
+commands.push("firstName: 'Shendy',")
+commands.push("lastName: 'Avila',")
+commands.push("city: 'Taguig',")
+commands.push("state: 'Metro Manila',")
+commands.push("zipCode: 1632")
+commands.push("}")
+commands.push("")
+commands.push("const { firstName, lastName } = personalInformation")
+commands.push("console.log(`${firstname} ${lastName}`)")
 render("DESTRUCTURING OBJECTS:", `${firstName} ${lastName}`, commands)
 
 let word1 = 'Dylan';
